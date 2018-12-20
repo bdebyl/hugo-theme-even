@@ -37,11 +37,8 @@ prevPost:
 nextPost:
   other: "Next"
 
-toc:
-  other: "Contents"
-
 readMore:
-  other: "Read more.."
+  other: "Read more..."
 
 reward:
   other: "Reward"
@@ -71,7 +68,7 @@ author:
   other: "Author"
 
 lastMod:
-  other: "LastMod"
+  other: "Modified"
 
 markdown:
   other: "Markdown"
