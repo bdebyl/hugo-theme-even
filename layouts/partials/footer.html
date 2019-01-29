@@ -16,7 +16,10 @@
   <span class="power-by">
     {{ (printf (T "powered") `<a class="hexo-link" href="https://gohugo.io">Hugo</a>`) | safeHTML }}
   </span>
-
+  <span class="division">|</span>
+  <span class="theme-info">
+      <a class="theme-link" href="https://gitlab.com/bdebyl/hugo-theme-even">Even</a>
+  </span>
   <span class="copyright-year">
     {{- $current := now.Format "2006" }}
     &copy;

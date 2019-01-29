@@ -8,6 +8,6 @@ css:
 	@${SASS} -t ${SASS_STYLE} ${CSS_INPUT_FILE} ${CSS_OUTPUT_FILE}
 	@echo "Done!"
 
-# Default target for make (<=3.80)
+o# Default target for make (<=3.80)
 .PHONY: default
 default: css ;
