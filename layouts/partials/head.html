@@ -28,8 +28,7 @@
   <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
 
-<!-- baidu & google verification  -->
-{{ with .Site.Params.baiduVerification }}<meta name="baidu-site-verification" content="{{.}}" />{{ end }}
+<!-- google verification  -->
 {{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
 
 <!-- Site Generator -->
@@ -51,11 +50,6 @@
 
 <!-- Styles -->
 <link href="{{ print "dist/" .Site.Data.even.assets.even.css | relURL }}" rel="stylesheet">
-
-<!-- custom css -->
-{{ range .Site.Params.customCSS -}}
-<link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
-{{ end }}
 
 {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
 {{- template "_internal/opengraph.html" . -}}

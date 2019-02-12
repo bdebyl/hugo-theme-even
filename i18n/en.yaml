@@ -40,15 +40,6 @@ nextPost:
 readMore:
   other: "Read more..."
 
-reward:
-  other: "Reward"
-
-rewardAlipay:
-  other: "alipay"
-
-rewardWechat:
-  other: "wechat"
-
 wordCount:
   one: "{{ .Count }} word"
   other: "{{ .Count }} words"
@@ -83,17 +74,3 @@ license:
 archiveCounter:
   one: "{{ .Count }} Post In Total"
   other: "{{ .Count }} Posts In Total"
-
-tagCounter:
-  one: "{{ .Count }} Tag In Total"
-  other: "{{ .Count }} Tags In Total"
-
-zeroTagCounter:
-  other: "No tags"
-
-categoryCounter:
-  one: "{{ .Count }} Category In Total"
-  other: "{{ .Count }} Categories In Total"
-
-zeroCategoryCounter:
-  other: "No categories"
