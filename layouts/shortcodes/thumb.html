@@ -1,4 +1,4 @@
 {{- $src := .Get 0 -}}
 <a href="{{ $src }}"><div class="thumbnail">
-  <center><img src="{{ $src }}"></center>
+  <center><img src="{{ $src | replaceRE "^(.*)/(.*)$" "$1/thumb/$2" }}"></center>
 </div></a>
