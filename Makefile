@@ -1,10 +1,15 @@
-SASS			= /usr/bin/sassc
-SASS_STYLE		= compressed # (nested, expanded, compact, compressed)
-CSS_INPUT_FILE	= `pwd`/src/css/style.scss
-CSS_OUTPUT_FILE	= `pwd`/static/dist/style.css
+SASS        = /usr/bin/sassc
+SASS_STYLE  = compressed # (nested, expanded, compact, compressed)
 
-.PHONY: css
-css:
-	@echo "Rebuilding ${CSS_OUTPUT_FILE}..."
-	@${SASS} -t ${SASS_STYLE} ${CSS_INPUT_FILE} ${CSS_OUTPUT_FILE}
+SCSS_FILES  = $(shell find src/ -type f -name *.scss)
+SCSS_IN     = src/css/style.scss
+CSS_OUT     = static/dist/style.css
+
+${CSS_OUT}: ${SCSS_FILES}
+	@echo "Rebuilding ${CSS_OUT}..."
+	@${SASS} -t ${SASS_STYLE} ${SCSS_IN} ${CSS_OUT}
 	@echo "Done!"
+
+.PHONY: clean
+clean:
+	rm -v ${CSS_OUT}
