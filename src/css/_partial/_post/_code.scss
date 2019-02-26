@@ -36,12 +36,6 @@ figure.highlight {
     }
   }
 
-  @each $sign, $text in $code-type-list {
-    &.#{$sign} > table::after {
-      content: $text;
-    }
-  }
-
   .code {
     pre {
       margin: 0;
@@ -129,11 +123,11 @@ figure.highlight {
     .hljs-formula {
       background: map-get($code-highlight-color, formula);
     }
-    
+
     .hljs-emphasis {
       font-style: italic;
     }
-    
+
     .hljs-strong {
       font-weight: bold;
     }
@@ -167,12 +161,6 @@ figure.highlight {
       color: darken($gray, 10%);
       background: darken($code-background, 3%);
       content: 'Code';
-    }
-  }
-
-  @each $sign, $text in $code-type-list {
-    &.#{$sign} > table::after {
-      content: $text;
     }
   }
 
