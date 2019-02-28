@@ -4,11 +4,16 @@
 
 .post-content {
   word-wrap: break-word;
+  hyphens: auto;
 
   @for $i from 1 through 6 {
     h#{$i} {
       font-weight: 400;
       font-family: $global-serif-font-family;
+
+      a {
+        color: $global-font-color !important;
+      }
 
       .anchor {
         float: left;
@@ -153,6 +158,8 @@
   .footnotes {
     [id^=fn] {
       @extend sub;
+      line-height: 1.0rem;
+      padding: 0.15rem 0;
     }
 
     > a {
