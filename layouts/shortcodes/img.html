@@ -1,0 +1,8 @@
+{{- $src := .Get "src" }}
+{{- $sub := .Get "sub" -}}
+<a href="{{ $src }}"><div class="thumbnail">
+  <center><img src="{{ $src }}"></center>
+  {{- if $sub -}}
+  <sub>{{ $sub }}</sub>
+  {{- end -}}
+</div></a>
