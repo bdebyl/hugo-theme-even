@@ -9,6 +9,10 @@
   border-radius: .125rem;
   overflow: auto;
 
+  span {
+    padding-top: .5rem;
+    display: block;
+  }
   .admonition-title {
     margin: 0 -0.75rem;
     padding: .5rem .75rem .5rem 2.5rem;
