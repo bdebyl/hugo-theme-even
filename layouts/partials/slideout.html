@@ -1,9 +1,9 @@
 <div class="mobile-navbar">
   <nav class="mobile-menu">
     <ul class="mobile-menu-list">
-      {{ range .Site.Menus.main -}}
+      {{ range $nav := .Site.Menus.main -}}
       <li class="mobile-menu-item">
-        <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
+        <a href="{{ $nav.URL | safeURL }}">{{ .Name }}</a>
       </li>
       {{- end }}
     </ul>
