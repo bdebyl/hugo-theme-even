@@ -44,7 +44,7 @@
    function gtag(){dataLayer.push(arguments);}
    gtag('js', new Date());
 
-   gtag('config', '{{ .site.Params.googleAnalytics }}');
+   gtag('config', '{{ .Site.Params.googleAnalytics }}');
   </script>
   {{ end }}
 </body>
