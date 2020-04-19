@@ -1,8 +1,14 @@
 {{- $src := .Get "src" }}
 {{- $sub := .Get "sub" -}}
-<a href="{{ $src }}"><div class="thumbnail">
-  <center><img src="{{ $src | replaceRE "^(.*)/(.*)$" "$1/thumb/$2" }}"></center>
-  {{- if $sub -}}
-  <sub>{{ $sub }}</sub>
-  {{- end -}}
-</div></a>
+{{ if not .Parent }}
+<div class="thumbnail-container">
+  {{ end }}
+  <a href="{{ $src }}"><div class="thumbnail">
+    <center><img src="{{ $src | replaceRE "^(.*)/(.*)$" "$1/thumb/$2" }}"></center>
+    {{- if $sub -}}
+    <sub>{{ $sub }}</sub>
+    {{- end -}}
+  </div></a>
+  {{ if not .Parent }}
+</div>
+{{ end }}
