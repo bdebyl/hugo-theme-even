@@ -21,8 +21,6 @@
     <span class="item-title">{{ T "license" }}</span>
     <span class="item-content">
     {{- if .Params.contentCopyright -}}
-      {{ .Params.contentCopyright | safeHTML }}
-    {{- else -}}
       {{ .Site.Params.contentCopyright | safeHTML }}
     {{- end -}}
     </span>
