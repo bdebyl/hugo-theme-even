@@ -9,10 +9,6 @@
     font-size: $logo-font-size;
     font-family: $logo-font-family;
   }
-
-  img {
-    max-height: 96px;
-  }
 }
 
 @include max-screen() {
