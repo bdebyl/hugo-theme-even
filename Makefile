@@ -10,6 +10,6 @@ ${CSS_OUT}: ${SCSS_FILES}
 	@${SASS} -t ${SASS_STYLE} ${SCSS_IN} ${CSS_OUT}
 	@echo "Done!"
 
-.PHONY: clean
 clean:
 	rm -v ${CSS_OUT}
+.PHONY: clean

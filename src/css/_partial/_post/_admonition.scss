@@ -9,12 +9,8 @@
   border-radius: .125rem;
   overflow: auto;
 
-  span {
-    padding-top: .5rem;
-    display: block;
-  }
   .admonition-title {
-    margin: 0 -0.75rem;
+    margin: 0 -0.75rem 0.5rem -0.75rem;
     padding: .5rem .75rem .5rem 2.5rem;
     border-bottom: .1rem solid rgba(68,138,255,.1);
     background-color: rgba(68,138,255,.1);
@@ -187,6 +183,8 @@
 }
 
 details.admonition {
+  height: 25px;
+
   summary {
     display: block;
     outline: none;
@@ -208,6 +206,8 @@ details.admonition {
 }
 
 details.admonition[open] {
+  height: initial;
+
   > summary:after {
     transform: rotate(180deg);
   }
