@@ -5,7 +5,7 @@
 <div class="thumbnail-container">
   {{ end }}
   <a href="{{ $src }}"><div class="thumbnail">
-    <center><img src="{{ $src | replaceRE "^(.*static/img)/(.*)$" "$1/w_500/$2" }}" alt="{{ $alt }}"></center>
+    <center><img src="{{ $src | replaceRE "^(.*static/img)/(.*)$" "$1/w_500/$2" }}" alt="{{ $alt }}" title="{{ $alt }}"></center>
     {{- if $sub -}}
     <sub>{{ $sub }}</sub>
     {{- end -}}
