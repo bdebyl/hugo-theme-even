@@ -13,17 +13,23 @@
 <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
 
 {{- if .Description -}}
-  <meta name="description" content="{{ .Description | safeHTML }}" />
+<meta name="description" content="{{ .Description | safeHTML }}" />
 {{- else if .IsPage -}}
-  <meta name="description" content="{{ .Summary | plainify }}" />
+<meta name="description" content="{{ .Summary | plainify }}" />
 {{- else if .Site.Params.description -}}
-  <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+<meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
 {{- end -}}
 
 {{- if .Site.Params.keywords -}}
-  {{ $length := len .Site.Params.keywords | add -1 -}}
-  <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
+{{ $length := len .Site.Params.keywords | add -1 -}}
+<meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
+
+<!-- privew image on social media -->
+{{ if isset .Params "preview" }}
+<meta name="og:image" content="{{ .Params.preview | absURL }}">
+<meta name="twitter:image" content="{{ .Params.preview | absURL }}">
+{{ end }}
 
 <!-- google verification  -->
 {{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
@@ -34,8 +40,8 @@
 <!-- Permalink & RSSlink -->
 <link rel="canonical" href="{{ .Permalink }}" />
 {{- if .OutputFormats.Get "RSS" }}
-  <link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-  <link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+<link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+<link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 {{- end -}}
 
 <!-- Favicon and Touch icons -->
