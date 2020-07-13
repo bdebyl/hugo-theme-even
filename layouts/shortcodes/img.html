@@ -3,7 +3,7 @@
 {{- $alt := .Get "alt" -}}
 <div class="thumbnail-container">
 <a href="{{ $src }}"><div class="thumbnail">
-  <center><img src="{{ $src }}" alt="{{ $alt }}" title="alt"></center>
+  <center><img src="{{ $src }}" alt="{{ $alt }}" title="{{ $alt }}"></center>
   {{- if $sub -}}
   <sub>{{ $sub }}</sub>
   {{- end -}}
