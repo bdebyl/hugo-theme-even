@@ -25,11 +25,14 @@
 <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
 
-<!-- privew image on social media -->
+<!-- preview image on social media -->
+{{ $preview := .Site.Params.sitePreview }}
 {{ if isset .Params "preview" }}
-<meta name="og:image" content="{{ .Params.preview | absURL }}">
-<meta name="twitter:image" content="{{ .Params.preview | absURL }}">
+  {{ $preview = .Params.preview }}
 {{ end }}
+
+<meta name="og:image" content="{{ $preview | absURL }}">
+<meta name="twitter:image" content="{{ $preview | absURL }}">
 
 <!-- google verification  -->
 {{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
