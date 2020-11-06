@@ -9,14 +9,13 @@
     display: inline-block;
     position: relative;
     padding-left: 0;
-    padding-right: 1em;
-    font-family: $global-font-family;
+    padding-right: 0;
 
     .menu-item {
       display: inline-block;
 
       & + .menu-item {
-        margin-left: $menu-item-margin-left;;
+        margin-left: $menu-item-margin-left;
       }
 
       @include underline-from-center;
@@ -24,6 +23,7 @@
 
     .menu-item-link {
       font-size: $menu-link-font-size;
+      font-family: $code-font-family;
     }
   }
 }

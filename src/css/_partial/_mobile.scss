@@ -22,14 +22,14 @@
     padding: 0;
 
     .mobile-menu-item {
-      padding: 0px 10px;
+      padding: 0px 14px;
       display: inline-block;
     }
 
     a {
       border-bottom: 1px solid $light-gray;
       font-size: 18px;
-      font-family: $global-serif-font-family;
+      font-family: $code-font-family;
 
       &:hover {
         color: $theme-color;
