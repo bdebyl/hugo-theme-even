@@ -1,17 +1,13 @@
 <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-
 <meta name="theme-color" content="#f8f5ec" />
 <meta name="msapplication-navbutton-color" content="#f8f5ec">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
-
 <!-- author & description -->
 <meta name="author" content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Author.name | safeHTML }}{{ end }}" />
-
 {{- if .Description -}}
 <meta name="description" content="{{ .Description | safeHTML }}" />
 {{- else if .IsPage -}}
@@ -19,44 +15,26 @@
 {{- else if .Site.Params.description -}}
 <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
 {{- end -}}
-
 {{- if .Site.Params.keywords -}}
-{{ $length := len .Site.Params.keywords | add -1 -}}
+{{- $length := len .Site.Params.keywords | add -1 -}}
 <meta name="keywords" content="{{ range $index, $element := .Site.Params.keywords }}{{ $element | safeHTML }}{{if ne $index $length }}, {{ end }}{{ end }}" />
 {{- end }}
-
-<!-- preview image on social media -->
-{{ $preview := .Site.Params.sitePreview }}
-{{ if isset .Params "preview" }}
-  {{ $preview = .Params.preview }}
-{{ end }}
-
-<meta name="og:image" content="{{ $preview | absURL }}">
-<meta name="twitter:image" content="{{ $preview | absURL }}">
-
 <!-- google verification  -->
-{{ with .Site.Params.googleVerification }}<meta name="google-site-verification" content="{{.}}" />{{ end }}
-
+{{- with .Site.Params.googleVerification -}}<meta name="google-site-verification" content="{{.}}" />{{- end -}}
 <!-- Site Generator -->
 <meta name="generator" content="Hugo {{ hugo.Version }} with even 4.0.0" />
-
 <!-- Permalink & RSSlink -->
 <link rel="canonical" href="{{ .Permalink }}" />
 {{- if .OutputFormats.Get "RSS" }}
 <link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 <link href="{{ with.OutputFormats.Get "RSS"}}{{ .RelPermalink}}{{ end }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
 {{- end -}}
-
 <!-- Favicon and Touch icons -->
 <link rel="shortcut icon" href="{{ .Site.Params.favicon }}">
 <link rel="manifest" href="{{ "manifest.json" | relURL }}">
 <link rel="mask-icon" href="{{ "safari-pinned-tab.svg" | relURL }}" color="#5bbad5">
-
 <!-- Styles -->
 <link href="{{ print "dist/" .Site.Data.even.assets.even.css | relURL }}" rel="stylesheet" type="text/css">
-
-{{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
 {{- template "_internal/opengraph.html" . -}}
-{{- template "_internal/google_news.html" . -}}
 {{- template "_internal/schema.html" . -}}
 {{- template "_internal/twitter_cards.html" . -}}
