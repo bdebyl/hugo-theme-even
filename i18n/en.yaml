@@ -38,7 +38,7 @@ nextPost:
   other: "Next"
 
 readMore:
-  other: "Read more..."
+  other: "Read More"
 
 wordCount:
   one: "{{ .Count }} word"

@@ -21,8 +21,12 @@
     <div class="post-summary">
       {{ .Summary }}
     </div>
+    {{- if .Site.Params.readMoreEnabled }}
     <div class="read-more">
-      <a href="{{ .Permalink }}" class="read-more-link">{{ T "readMore" }}</a>
+      <div class="read-more-btn">
+        <a href="{{ .Permalink }}" class="read-more-link">{{ T "readMore" }}</a>
+      </div>
     </div>
+    {{- end }}
   </div>
 </article>
