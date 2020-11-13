@@ -3,16 +3,16 @@
 
 name = "Even"
 license = "MIT"
-licenselink = "https://gitlab.com/bdebyl/hugo-theme-even/blob/master/LICENSE.md"
+licenselink = "https://github.com/bdebyl/hugo-theme-even/blob/master/LICENSE.md"
 description = "A super concise theme for Hugo"
-homepage = "https://gitlab.com/bdebyl/hugo-theme-even"
+homepage = "https://github.com/bdebyl/hugo-theme-even"
 tags = ["responsive", "blog", "simple", "clean"]
 features = ["responsive", "blog", "simple", "clean"]
 min_version = "0.50"
 
 [author]
   name = "bdebyl"
-  homepage = "https://gitlab.com/bdebyl/hugo-theme-even"
+  homepage = "https://github.com/bdebyl/hugo-theme-even"
 
 # If porting an existing theme
 [original]
